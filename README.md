@@ -195,3 +195,9 @@ In conclusione, il progetto presentato è la prima versione del servizio di vali
   <img src="Presentazione/img/19.png" alt="Implementazioni Future." />
 </div>
 In particolare, due delle criticità già emerse rappresentano l’utilizzo di un’API remota e l’assenza di autenticazione da parte degli utenti. Per quanto riguarda la prima, si è discussa la possibilità di implementare un database, già esistente all’interno del gruppo bancario, che permetta di confrontare il codice inserito con quelli memorizzati. Questa modifica permetterebbe di aumentare le prestazioni, evitando il collegamento esterno, e soprattutto aumenterebbe la sicurezza del servizio. Per quanto riguarda l’autenticazione, invece, è emersa in fase di sviluppo la possibilità di far accedere utenti e operatori con le proprie credenziali, in modo da aumentarne l’affidabilità e sicurezza, garantendo solo accessi autenticati.
+
+<!-- CREDITI -->
+## Crediti
+<div align="center">
+  <img src="Presentazione/img/21.png" alt="Crediti." />
+</div>
