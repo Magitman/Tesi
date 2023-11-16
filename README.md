@@ -116,9 +116,38 @@ Avanzando con la presentazione, si analizza più nel dettaglio quello che è il 
   <img src="Presentazione/img/11.png" alt="Architettura del Servizio REST." />
 </div>
 Per cominciare, il servizio REST esposto segue un’architettura formata da 3 livelli, ognuno che comunica con il precedente e con il successivo. Questi sono:
-<ol>
+<ul>
   <li>il livello di business: che si occupa della gestione delle richieste HTTP, dell’autenticazione e della traduzione dei dati JSON in oggetti Java. Inoltre, comprende le regole e la logica di business dell’applicazione, inclusa la validazione dei dati, che determinano quali azioni compiere;</li>
   <li>il livello di persistenza: che gestisce la logica di memorizzazione e traduce gli oggetti di business da e verso il database;</li>
   <li>il livello di database: che rappresenta la base dati utilizzata per gestire i dati dell’applicazione.</li>
-</ol>
+</ul>
 Come si evince dallo schema, alcuni dei componenti rappresentati (in particolare CONTROLLER e MODEL) sono un chiaro riferimento al design pattern su cui si basa il servizio: il pattern MVC.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/12.png" alt="Rappresentazione del Pattern MVC." />
+</div>
+Nel contesto di un servizio web REST sviluppato con Spring Boot, si semplifica l’uso del design pattern MVC (Model View Controller). In questo modo:
+<ul>
+  <li>il Model rappresenta i dati e le risorse. Nella slide infatti è presente la classe Entità utilizzata per mappare i dati da e verso la tabella del database;</li>
+  <li>la View non è la pagina web mostrata all’utente ma è sostituita dalla rappresentazione dei dati inviati ai client in formato JSON. Qui sono riportati i valori di ritorno quando l’IBAN è valido, in verde, e quando invece non lo è, in rosso, con tanto di codice e descrizione testuale dell’errore;</li>
+  <li>il Controller, invece, coordina le richieste ed è implementato con le annotazioni @RestController (trattandosi di un servizio REST) e @RequestMapping (per l’esposizione del servizio); inoltre, contiene la logica di business, occupandosi di mappare il JSON in un oggetto Java e controllando la validità del codice IBAN (comunicando con l’API esterna).</li>
+</ul>
+Infine, tramite la comunicazione tra livello di business e livello di persistenza, il controller comunica con il repository per memorizzare le richieste all’interno del database.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/13.png" alt="Comunicazione con API Esterna." />
+</div>
+Dato che la validazione vera e propria del codice IBAN inviato dai client è affidata ad un servizio esterno, esposto da ANYAPI, è stato necessario impostare il back-end affinché potesse effettuare una richiesta HTTP. In questi casi, una volta che si è a conoscenza del formato del JSON ritornato dalla risorsa esterna, si procede con la creazione di un Data Transfer Object. Si tratta di un oggetto Java utilizzato per lo scambio di dati ed impiegato per mappare la risposta. Inoltre, al fine di migliorare la leggibilità e la coesione del codice, si è scelto di dichiarare le variabili contenenti il link e la chiave dell’API esterna nel file di configurazione application.properties. Questo processo rispetta le best practice per il riutilizzo e la contestualizzazione del codice. Infine, per effettuare il processo di richiesta vero e proprio, Spring Boot mette a disposizione la dipendenza RestTemplate, che svolge un ruolo fondamentale nella comunicazione con i servizi esterni poiché permette di effettuare richieste HTTP sincrone. E’ importante controllare sempre il valore di ritorno prima di utilizzarlo, poiché in caso di errore durante la richiesta il DTO sarà impostato a null.
+
+<!-- FRONT-END -->
+## Front-end
+<div align="center">
+  <img src="Presentazione/img/14.png" alt="Front-end del Progetto." />
+</div>
+Una volta compresa la struttura ed il funzionamento del servizio back-end, si analizza il comparto front-end del progetto.
+<br />
+<br />
