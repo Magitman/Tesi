@@ -1,6 +1,6 @@
 # Tesi
 
-<!-- PROJECT LOGO -->
+<!-- LOGO UNITO -->
 <br />
 <div align="center">
   <a href="https://www.unito.it/">
@@ -20,26 +20,25 @@
     <a href="https://github.com/Magitman/Tesi/tree/main/Latex%20Project">Progetto Latex</a>
   </p>
 </div>
-
+<br />
+<br />
 
 
 <!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Sommario</summary>
-  <ol>
-    <li><a href="#Realizzazione-di-un-Servizio-REST-per-la-Validazione-dei-Codici-Bancari">Realizzazione di un Servizio REST per la Validazione dei Codici Bancari</a></li>
-    <li><a href="#Stage">Stage</a></li>
-    <li><a href="#Tecnologie">Tecnologie</a></li>
-    <li><a href="#Architettura">Architettura</a></li>
-    <li><a href="#Back-end">Back-end</a></li>
-    <li><a href="#Front-end">Front-end</a></li>
-    <li><a href="#Conclusioni">Conclusioni</a></li>
-    <li><a href="#Crediti">Crediti</a></li>
-  </ol>
-</details>
+## Sommario
+<ol>
+  <li><a href="#Introduzione-Tesi">Introduzione Tesi</a></li>
+  <li><a href="#Stage">Stage</a></li>
+  <li><a href="#Tecnologie">Tecnologie</a></li>
+  <li><a href="#Architettura">Architettura</a></li>
+  <li><a href="#Back-end">Back-end</a></li>
+  <li><a href="#Front-end">Front-end</a></li>
+  <li><a href="#Conclusioni">Conclusioni</a></li>
+  <li><a href="#Crediti">Crediti</a></li>
+</ol>
 
 <!-- TESI -->
-## Realizzazione di un Servizio REST per la Validazione dei Codici Bancari
+## Introduzione Tesi
 <div align="center">
   <img src="Presentazione/img/01.png" alt="Slide introduttiva. Include titolo, università, relatrice e tutor." />
 </div>
