@@ -4,8 +4,8 @@ Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="Latex Project/img/logo_new_2022.png" alt="Logo" width="80" height="80">
+  <a href="https://www.unito.it/">
+    <img src="Latex Project/img/logo_new_2022.png" alt="Logo" width="67" height="100">
   </a>
 
   <h3 align="center">TESI</h3>
@@ -13,12 +13,12 @@ Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
   <p align="center">
     Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Magitman/Tesi/tree/main/Latex%20Project"><strong>Progetto Latex</strong></a>
     <br />
     <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    <a href="https://github.com/Magitman/Tesi/blob/main/Presentazione/Presentazione%20Tesi.pdf">Presentazione</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
+    <a href="https://github.com/Magitman/Tesi/blob/main/Realizzazione%20di%20un%20servizio%20REST%20per%20la%20validazione%20dei%20codici%20bancari.pdf">Tesi</a>
     ·
     <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
   </p>
