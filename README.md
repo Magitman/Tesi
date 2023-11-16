@@ -28,22 +28,14 @@ Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#Realizzazione-di-un-Servizio-REST-per-la-Validazione-dei-Codici-Bancari">Realizzazione di un Servizio REST per la Validazione dei Codici Bancari</a>
-    </li>
-    <li>
-      <a href="#Stage">Stage</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
+    <li><a href="#Realizzazione-di-un-Servizio-REST-per-la-Validazione-dei-Codici-Bancari">Realizzazione di un Servizio REST per la Validazione dei Codici Bancari</a></li>
+    <li><a href="#Stage">Stage</a></li>
+    <li><a href="#Tecnologie">Tecnologie</a></li>
+    <li><a href="#Architettura">Architettura</a></li>
+    <li><a href="#Back-end">Back-end</a></li>
+    <li><a href="#Front-end">Front-end</a></li>
+    <li><a href="#Conclusioni">Conclusioni</a></li>
+    <li><a href="#Crediti">Crediti</a></li>
   </ol>
 </details>
 
@@ -82,3 +74,19 @@ Il tirocinio curriculare che ho svolto si è tenuto presso l’azienda multinazi
   <img src="Presentazione/img/05.png" alt="Presentazione del Progetto." />
 </div>
 Per quanto riguarda il progetto, l’obiettivo principale era quello di realizzare un servizio che fosse in grado di validare codici IBAN, implementando anche un’interfaccia web che permettesse ad utenti ed operatori del gruppo bancario di interagire con l’applicativo. In particolare, il servizio back-end espone un API REST che valida l’ID bancario inviato e tiene traccia delle richieste dei client in un database. Il punto d’ingresso del servizio, utilizzabile dagli utenti, ha richiesto lo sviluppo front-end di una pagina web per l’immissione dei dati e la visualizzazione dell’output, in modo che risultasse semplice, intuitivo e affidabile. Come si evince, la realizzazione del progetto ha richiesto la convergenza di competenze provenienti da diversi campi dello sviluppo software, da back-end a front-end. Questo approccio multidisciplinare è stato reso possibile anche dal contesto lavorativo mostrato nella slide precedente.
+<br />
+<br />
+
+<!-- TECNOLOGIE -->
+## Tecnologie
+<div align="center">
+  <img src="Presentazione/img/06.png" alt="Tecnologie Utilizzate." />
+</div>
+Passando alle tecnologie utilizzate nella realizzazione dell’applicativo, ho voluto suddividerle in modo da separare quelle usate per lo sviluppo front-end da quelle usate per il back-end.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/07.png" alt="Grafico delle Tecnologie Utilizzate." />
+</div>
+Cominciando dal front-end, il framework su cui si basa la web-application è Angular, utilizzato per creare l’interfaccia utente dell’applicazione come Single Page Application. Questa è stata realizzata focalizzandosi sulla creazione e comunicazione dei componenti, elementi fondamentali per Angular che contengono la definizione di una vista all’interno della pagina. Ognuno è formato da un file di script TypeScript decorato con l’annotazione @Component, un modello HTML e stili CSS opzionali. La collaborazione tra questi elementi definisce l’aspetto ed il comportamento di ogni componente, e quindi della pagina stessa. La realizzazione del back-end, invece, è stata messa in pratica utilizzando il framework Spring Boot, che semplifica e velocizza lo sviluppo di applicazioni web basate su Spring, e quindi sul linguaggio di programmazione Java. Spring Boot consente allo sviluppatore di concentrarsi sulle funzionalità di business, occupandosi automaticamente della gestione delle risorse del sistema e fornendo supporto all’infrastruttura dell’applicazione. Inoltre, mette a disposizione i cosiddetti “starter”, ovvero set di dipendenze configurate automaticamente. Uno di questi è “spring data jpa”, parte del progetto Spring Data e che include tutte le dipendenze necessarie per comunicare con il database tramite JPA, acronimo di Java Persistence API. Spring Data JPA è un framework che fornisce un modello di programmazione per l’accesso ai dati in database relazionali e non, semplificando l’implementazione dei repository, ovvero le interfacce preposte alla comunicazione con la base dati. Oltre alle tecnologie citate, è stata realizzata una suite di test con Junit mentre il database è stato implementato in modalità in-memory con H2, un database management system relazionale scritto in Java e supportato da Spring Boot. Inoltre, il linguaggio SQL è stato utilizzato per dichiarare la struttura del database, nonostante questo sia formato da un’unica tabella in cui vengono memorizzate le richieste dei client. Per concludere, lo strumento di build utilizzato è Maven, che si occupa della compilazione dei file sorgenti in eseguibili e gestisce l’integrazione ed il download delle dipendenze esterne all’interno del progetto.
