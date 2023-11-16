@@ -52,8 +52,13 @@ Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
 
 
 ## Realizzazione di un Servizio REST per la Validazione dei Codici Bancari
+<div align="center">
+  <img src="Presentazione/img/01.png" alt="Slide introduttiva. Include titolo, università, relatrice e tutor." />
+</div>
 Sono <a href="https://www.linkedin.com/in/luca-broggiato-639154188/" target="_blank">Luca Broggiato</a> e questa è la presentazione della mia tesi di laurea, intitolata “Realizzazione di un servizio REST per la validazione dei codici bancari”. La stesura è stata possibile anche grazie al prezioso aiuto e supporto della mia relatrice, la docente <a href="https://www.linkedin.com/in/liliana-ardissono-1007508/" target="_blank">Liliana Ardissono</a>, ed i tutor che si sono avvicendati in azienda, i dottori <a href="https://www.linkedin.com/in/paolo-mino-a284653b/" target="_blank">Paolo Mino</a> e <a href="https://www.linkedin.com/in/antonio-zollino-43638346/" target="_blank">Antonio Zollino</a>.
 
+## Indice
 <div align="center">
-  <img src="Presentazione/img/01.png" alt="Prima slide della presentazione. Include titolo, università, relatrice e tutor."/>
+  <img src="Presentazione/img/02.png" alt="Indice della presentazione." />
 </div>
+La presentazione è composta da 6 sezioni, ognuna riguardante un tema specifico, per illustrare la mia esperienza di tirocinio curriculare ed il progetto che ho potuto realizzare.
