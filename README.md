@@ -1,5 +1,4 @@
 # Tesi
-Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
 
 <!-- PROJECT LOGO -->
 <br />
@@ -151,3 +150,49 @@ Dato che la validazione vera e propria del codice IBAN inviato dai client è aff
 Una volta compresa la struttura ed il funzionamento del servizio back-end, si analizza il comparto front-end del progetto.
 <br />
 <br />
+
+<div align="center">
+  <img src="Presentazione/img/15.png" alt="Angular." />
+</div>
+Il front-end dell’applicazione si basa interamente sul framework di sviluppo Angular, utilizzato per creare l’interfaccia utente dell’applicazione come Single Page Application. Si tratta di uno dei framework più utilizzati in quest’ambito e gode del supporto di quasi 2 milioni di sviluppatori, autori di librerie e creatori di contenuti. La web-application è stata realizzata focalizzandosi sulla creazione e sulla comunicazione dei componenti, resa possibile dagli script TypeScript. Inoltre, questi elementi architetturali, fondamentali per creare applicazioni scalabili, sono formati anche da un template HTML e fogli di stile CSS, per definire il layout del componente e assegnarli uno stile personalizzato. Oltre a ciò, gli elementi del template HTML possono essere legati alle proprietà presenti nel file di script tramite quello che è definito two-way data binding. In questo modo, è possibile visualizzare e modificare i valori dinamicamente, rispondere ad un evento ed altro ancora. Altra caratteristica fondamentale di Angular sono le direttive, che influenzano l’aspetto, il comportamento o il layout del DOM (Document Object Module, ovvero il modello con struttura ad albero che rappresenta una pagina web). Le direttive possono essere:
+<ul>
+  <li>Component, rappresentate dall’omonimo decoratore, che fornisce la configurazione per determinare come un componente deve essere processato, istanziato e utilizzato a runtime;</li>
+  <li>Strutturali, per inserire condizioni o cicli che permettono la modifica dinamica del DOM;</li>
+  <li>Di attributo, che consentono la modifica dinamica dello stile degli elementi HTML.</li>
+</ul>
+Infine, il modulo HTTPClient permette di effettuare chiamate verso API RESTful e di interagire con servizi esterni. Mette a disposizione una struttura pipe per incanalare la risposta ricevuta ed eseguire operazioni sui dati prima di renderli disponibili nel codice, come ad esempio la gestione delle risposte HTTP in caso di errore.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/16.png" alt="Componenti." />
+</div>
+Nel contesto Angular, i componenti sono i blocchi fondamentali che compongono un’applicazione, e nel caso della web-application realizzata per il progetto, ne sono stati creati 4:
+<ol>
+  <li>il componente form rappresenta il modulo per l’inserimento dei dati;</li>
+  <li>il componente offline costituisce la schermata da visualizzare se il servizio back-end non è raggiungibile;</li>
+  <li>il componente outcome mostra il risultato dell’elaborazione back-end, quando è raggiungibile;</li>
+  <li>il componente top-bar è invece la barra superiore, presente in ogni schermata dell’applicazione.</li>
+</ol>
+I componenti Angular sono il cuore dell’applicazione. Ognuno di essi è responsabile di un aspetto specifico dell’interfaccia utente e la comunicazione avviene emettendo eventi personalizzati. Inoltre, come riportato nella slide, la scelta del componente da mostrare in pagina è effettuata tramite la direttiva di attributo “ngClass”, che permette di modificare la classe del relativo elemento HTML. Questo, grazie alle animazioni e alle transizioni impostate nel foglio di stile CSS, consente di mettere in primo piano un componente piuttosto che un altro a seconda della proprietà di riferimento.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/17.png" alt="Risultato dello Sviluppo Front-end." />
+</div>
+Quindi, il risultato finale è quello mostrato nel diagramma di flusso. Partendo dal presupposto che il componente top-bar è sempre presente nella vista, quando gli utenti si interfacciano con la web-application atterrano sul componente form. Una volta compilato con i propri dati, viene eseguita una richiesta HTTP verso l’API REST esposta dal servizio back-end. Se questo risulta offline, viene subito mostrato l’omonimo componente, che informa l’utente circa lo stato del servizio. Da qui è possibile tornare al componente precedente e riprovare. Altrimenti, se il servizio è online, si controlla il JSON ritornato dal back-end e si attiva il componente outcome. Se la risposta non contiene errori e l’IBAN è valido, si segnala tale informazione, altrimenti viene mostrato a schermo il codice e la descrizione testuale dell’errore. In ogni caso, anche da questo componente è possibile tornare al form principale.
+
+<!-- CONCLUSIONI -->
+## Conclusioni
+<div align="center">
+  <img src="Presentazione/img/18.png" alt="Conclusioni." />
+</div>
+In conclusione, il progetto presentato è la prima versione del servizio di validazione IBAN, al quale seguiranno future implementazioni per migliorare l’infrastruttura esistente.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/19.png" alt="Implementazioni Future." />
+</div>
+In particolare, due delle criticità già emerse rappresentano l’utilizzo di un’API remota e l’assenza di autenticazione da parte degli utenti. Per quanto riguarda la prima, si è discussa la possibilità di implementare un database, già esistente all’interno del gruppo bancario, che permetta di confrontare il codice inserito con quelli memorizzati. Questa modifica permetterebbe di aumentare le prestazioni, evitando il collegamento esterno, e soprattutto aumenterebbe la sicurezza del servizio. Per quanto riguarda l’autenticazione, invece, è emersa in fase di sviluppo la possibilità di far accedere utenti e operatori con le proprie credenziali, in modo da aumentarne l’affidabilità e sicurezza, garantendo solo accessi autenticati.
