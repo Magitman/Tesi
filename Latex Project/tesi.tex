@@ -1,0 +1,295 @@
+%CLASSE DOCUMENTO - LINGUA E DIMENSIONE FONT
+\documentclass[corpo=10pt,numerazioneromana]{toptesi}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INCLUSIONE PACCHETTI
+\usepackage[classica]{topfront}
+\usepackage[utf8]{inputenc} %utf8
+\usepackage[italian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{blindtext}
+\usepackage{graphicx,wrapfig}
+\usepackage{booktabs}
+\usepackage{lmodern}
+\usepackage{varioref}
+\usepackage{url}
+\usepackage{array}
+\usepackage{paralist}{\obeyspaces\global\let =\space}
+\usepackage{verbatim}
+\usepackage{subfig}
+\usepackage{tabularx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{listings}
+\usepackage[pass]{geometry}
+\usepackage[figuresright]{rotating}
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\usepackage{amsmath}
+\usepackage[babel]{csquotes}
+\usepackage{hyperref}
+\usepackage{fancyhdr}
+\usepackage{indentfirst}
+\usepackage[font=small,labelfont=bf]{caption}
+
+%% this for both bibliography and sitografia
+% \usepackage[round]{natbib}
+% \usepackage{multibib}
+% \newcites{Math}{Sitografia}
+
+%% only bibliography
+%%%%5 style=numeric-comp
+\usepackage[backend=biber, bibencoding=utf8, style=numeric-comp, sorting=none]{biblatex}
+% \usepackage[backend=biber, bibencoding=ascii]{biblatex}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%INTERLINEA
+\interlinea{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CONFIGURAZIONE LINK E RIFERIMENTI
+\hypersetup{%
+    pdfpagemode={UseOutlines},
+    bookmarksopen,
+    pdfstartview={FitH},
+    colorlinks,
+    linkcolor={black}, %COLORE DEI RIFERIMENTI AL TESTO
+    citecolor={blue}, %COLORE DEI RIFERIMENTI ALLE CITAZIONI
+    urlcolor={blue} %COLORI DEGLI URL
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% CONFIGURAZIONE LISTATI/CODICE - CANCELLARE SE NON NECESSARIO
+% PYTHON - BIANCO E NERO
+\lstset{%
+	captionpos=b,
+	language=Python,
+	basicstyle =\small\ttfamily,
+	keywordstyle=\color{black}\bfseries,
+	breaklines=true,
+	breakatwhitespace=true,
+	frame=lines,
+	numbers=left,
+	numberstyle=\footnotesize,
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% FRENCHSPACING VA _SEMPRE_ ABILITATO PER DOCUMENTI IN ITALIANO
+\frenchspacing
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%DEFINIZIONE SEZIONI IN NUMERAZIONE ROMANA
+%ELENCO DEI LISTATI/CODICI
+\newcommand\myfontsize{\fontsize{11pt}{13pt}\selectfont}
+
+\makeatletter
+\newcommand\listofcodes{%
+ \iffrontmatter\else\frontmattertrue\fi
+ \if@openright\cleardoublepage\else\clearpage\fi
+ % change the meaning of \chapter in a group
+ \begingroup\def\chapter##1{\@schapter}
+ \phantomsection % for the hyperlink
+ \addcontentsline{toc}{chapter}{Elenco dei Codici}
+ \lstlistoflistings
+ \endgroup
+} 
+\makeatother
+
+\addto\captionsitalian{%
+  \renewcommand{\lstlistlistingname}{Elenco dei Codici}%
+  \renewcommand{\lstlistingname}{Codice}%
+  \renewcommand{\listfigurename}{Elenco delle Figure}%
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% LISTA DEI CAPITOLI DA INCLUDERE - PERSONALIZZARE
+\includeonly{%
+fronte,%
+introduzione,%
+chap_1,%
+chap_2,%
+chap_3,%
+conclusioni,%
+app_a,%
+ringraziamenti,%
+}
+
+%%%% FILE DI BIBLIOGRAFIA
+\addbibresource{bibliography.bib}
+\AtBeginBibliography{\small}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+% INIZIO DOCUMENTO
+\begin{document}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% DEFINE CODE STYLES %%%
+\definecolor{javared}{rgb}{0.6,0,0} % for strings
+\definecolor{javagreen}{rgb}{0.25,0.5,0.35} % comments
+\definecolor{javapurple}{rgb}{0.5,0,0.35} % keywords
+\definecolor{javadocblue}{rgb}{0.25,0.35,0.75} % javadoc
+
+\lstset{language=Java,
+otherkeywords={
+        String, boolean, int, double, float, @NotNull, @Size, @RequestHeader
+        },
+basicstyle=\ttfamily,
+keywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javared},
+commentstyle=\color{javagreen},
+morecomment=[s][\color{javadocblue}]{/**}{*/},
+numbers=none,
+numberstyle=\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+frame=leftline,
+showstringspaces=false}
+
+\lstset{language=HTML,
+otherkeywords={
+        % HTML tags
+        <html>, <head>, <title>, </title>, <meta, />, </head>, <body>, <app-form, <app-outcome, <app-offline, /app-form>, /app-outcome>, /app-offline>,
+        <canvas, \/canvas>, <script>, </script>, </body>, </html>, <!, html>, <style>, </style>, ><
+        },
+ndkeywords={[ngClass], (notify)},
+basicstyle=\fontsize{10}{12}\selectfont\ttfamily,
+keywordstyle=\color{blue}\bfseries,
+ndkeywordstyle=\color{javapurple}\bfseries,
+stringstyle=\color{javagreen},
+commentstyle=\color{javared},
+morecomment=[s][\color{javadocblue}]{<!--}{-->},
+numbers=none,
+numberstyle=\color{black},
+stepnumber=2,
+numbersep=10pt,
+tabsize=4,
+showspaces=false,
+frame=leftline,
+showstringspaces=false}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\frontmatter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% REFERENZE
+% This is a reference to a chapter \ref{chap:chap_2}. This is a reference to a figure \ref{fig:doge}. This is a reference to some code \ref{lst:hello}. This is a citation \cite{famous:paper}.
+
+
+
+
+% CITAZIONE - PERSONALIZZARE
+% VSPACE - PROPORZIONE USATA PER CENTRATURA VERTICALE DEL TESTO
+% FLUSHRIGHT - ALLINEAMENTO ORIZZONTALE A DESTRA
+% \vspace*{\stretch{1}}
+% \begin{flushright}
+% \noindent
+% \textit{A Tobia e Bianca}
+
+% \end{flushright}
+% \vspace*{\stretch{6}}
+% \cleardoublepage
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%Intestazione
+\include{fronte}
+
+%INTERLINEA
+\interlinea{2}
+
+% ABSTRACT
+\include{introduzione}
+% Sommario.
+
+%INTERLINEA
+\interlinea{1.5}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INDICI - ELIMINARE GLI INDICI NON NECESSARI
+
+% INDICE GENERALE
+{\myfontsize
+\tableofcontents
+}
+
+% INDICE DELLE FIGURE
+%\listoffigures
+
+%INDICE DELLE TABELLE
+%\listoftables
+
+% INDICE DEI CODICI
+% \listofcodes
+% \include{strumenti-ottici.py}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% INCLUSIONE FILE CAPITOLI - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
+\mainmatter
+\include{chap_1}
+\include{chap_2}
+\include{chap_3}
+\include{conclusioni}
+
+% \appendix
+% INCLUSIONE APPENDICI - - PERSONALIZZARE - TENERE COERENTE CON LISTA IN ALTO
+\include{app_a}
+
+
+% RINGRAZIAMENTI - PERSONALIZZARE
+\addcontentsline{toc}{chapter}{Ringraziamenti}
+\include{ringraziamenti}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{\myfontsize
+    \listoffigures
+}
+
+\addcontentsline{toc}{chapter}{Elenco dei Codici}
+{\myfontsize
+    \lstlistoflistings
+}
+%%%%%%%%%%%%%%%%%%%%%% BIBLIOGRAFIA
+%\phantomsection
+%\addcontentsline{toc}{chapter}{\refname}
+%\nocite{*}
+\newpage
+\addcontentsline{toc}{chapter}{Bibliografia \& Sitografia}
+\printbibliography[title=Bibliografia \& Sitografia]
+% \cite{paper1} and \cite{paper2} were published later than \citeMath{paper3}. See also \citePhys{paper4}.
+
+% \bibliographystyle{unsrt}
+% \bibliography{bibliography}
+
+% \bibliographystyleMath{unsrt}
+% \bibliographyMath{sitografia}
+
+
+\end{document}
+
+
+
