@@ -1,16 +1,17 @@
 # Tesi
 
-<!-- LOGO UNITO -->
+<!-- LOGO UNITO width="67" -->
 <br />
 <div align="center">
   <a href="https://www.unito.it/">
-    <img src="Latex Project/img/logo_new_2022.png" alt="Logo" width="67" height="100">
+    <img src="Latex Project/img/logo_new_2022.png" alt="Logo" height="300">
   </a>
 
-  <h3 align="center">TESI</h3>
+  <h3 align="center">Realizzazione di un Servizio REST per la Validazione dei Codici Bancari</h3>
 
   <p align="center">
-    Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
+    Tesi di Laurea presso l'Università degli Studi di Torino, Anno Scolastico 2022/2023.
+    <br />
     <br />
     <a href="https://github.com/Magitman/Tesi/blob/main/Realizzazione%20di%20un%20servizio%20REST%20per%20la%20validazione%20dei%20codici%20bancari.pdf"><strong>Tesi</strong></a>
     <br />
