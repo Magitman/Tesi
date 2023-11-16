@@ -26,7 +26,7 @@ Tesi di Laurea presso l'Università degli Studi di Torino, Novembre 2023.
 
 <!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
+  <summary>Sommario</summary>
   <ol>
     <li><a href="#Realizzazione-di-un-Servizio-REST-per-la-Validazione-dei-Codici-Bancari">Realizzazione di un Servizio REST per la Validazione dei Codici Bancari</a></li>
     <li><a href="#Stage">Stage</a></li>
@@ -74,8 +74,6 @@ Il tirocinio curriculare che ho svolto si è tenuto presso l’azienda multinazi
   <img src="Presentazione/img/05.png" alt="Presentazione del Progetto." />
 </div>
 Per quanto riguarda il progetto, l’obiettivo principale era quello di realizzare un servizio che fosse in grado di validare codici IBAN, implementando anche un’interfaccia web che permettesse ad utenti ed operatori del gruppo bancario di interagire con l’applicativo. In particolare, il servizio back-end espone un API REST che valida l’ID bancario inviato e tiene traccia delle richieste dei client in un database. Il punto d’ingresso del servizio, utilizzabile dagli utenti, ha richiesto lo sviluppo front-end di una pagina web per l’immissione dei dati e la visualizzazione dell’output, in modo che risultasse semplice, intuitivo e affidabile. Come si evince, la realizzazione del progetto ha richiesto la convergenza di competenze provenienti da diversi campi dello sviluppo software, da back-end a front-end. Questo approccio multidisciplinare è stato reso possibile anche dal contesto lavorativo mostrato nella slide precedente.
-<br />
-<br />
 
 <!-- TECNOLOGIE -->
 ## Tecnologie
@@ -90,3 +88,37 @@ Passando alle tecnologie utilizzate nella realizzazione dell’applicativo, ho v
   <img src="Presentazione/img/07.png" alt="Grafico delle Tecnologie Utilizzate." />
 </div>
 Cominciando dal front-end, il framework su cui si basa la web-application è Angular, utilizzato per creare l’interfaccia utente dell’applicazione come Single Page Application. Questa è stata realizzata focalizzandosi sulla creazione e comunicazione dei componenti, elementi fondamentali per Angular che contengono la definizione di una vista all’interno della pagina. Ognuno è formato da un file di script TypeScript decorato con l’annotazione @Component, un modello HTML e stili CSS opzionali. La collaborazione tra questi elementi definisce l’aspetto ed il comportamento di ogni componente, e quindi della pagina stessa. La realizzazione del back-end, invece, è stata messa in pratica utilizzando il framework Spring Boot, che semplifica e velocizza lo sviluppo di applicazioni web basate su Spring, e quindi sul linguaggio di programmazione Java. Spring Boot consente allo sviluppatore di concentrarsi sulle funzionalità di business, occupandosi automaticamente della gestione delle risorse del sistema e fornendo supporto all’infrastruttura dell’applicazione. Inoltre, mette a disposizione i cosiddetti “starter”, ovvero set di dipendenze configurate automaticamente. Uno di questi è “spring data jpa”, parte del progetto Spring Data e che include tutte le dipendenze necessarie per comunicare con il database tramite JPA, acronimo di Java Persistence API. Spring Data JPA è un framework che fornisce un modello di programmazione per l’accesso ai dati in database relazionali e non, semplificando l’implementazione dei repository, ovvero le interfacce preposte alla comunicazione con la base dati. Oltre alle tecnologie citate, è stata realizzata una suite di test con Junit mentre il database è stato implementato in modalità in-memory con H2, un database management system relazionale scritto in Java e supportato da Spring Boot. Inoltre, il linguaggio SQL è stato utilizzato per dichiarare la struttura del database, nonostante questo sia formato da un’unica tabella in cui vengono memorizzate le richieste dei client. Per concludere, lo strumento di build utilizzato è Maven, che si occupa della compilazione dei file sorgenti in eseguibili e gestisce l’integrazione ed il download delle dipendenze esterne all’interno del progetto.
+
+<!-- Architettura -->
+## Architettura
+<div align="center">
+  <img src="Presentazione/img/08.png" alt="Architettura del Progetto." />
+</div>
+Si mostra quindi l’architettura globale del progetto.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/09.png" alt="Rappresentazione Grafica dell'Architettura del Progetto." />
+</div>
+Gli utenti si interfacciano con l’applicazione attraverso la pagina web realizzata con Angular, che funge da entrypoint per l’immissione dei dati e  fornisce l’output visivo dell’elaborazione. Una volta compilato un form, la richiesta viene inoltrata al back-end tramite il protocollo HTTP, dove i dati vengono controllati e processati dal servizio REST esposto. Se le informazioni presenti nella richiesta rispettano i formati ed i pattern impostati, allora viene prelevato il codice IBAN ricevuto per contattare un servizio esterno, messo a disposizione da ANYAPI, che ne verifica la validità. Il risultato di questa chiamata viene memorizzato nel database insieme ai dati forniti con la richiesta utente. Infine, si inoltra una risposta HTTP al client contenente i dati che indicano la validità del ID bancario in formato JSON.
+
+<!-- BACK-END -->
+## Back-end
+<div align="center">
+  <img src="Presentazione/img/10.png" alt="Back-end del Progetto." />
+</div>
+Avanzando con la presentazione, si analizza più nel dettaglio quello che è il back-end del progetto realizzato.
+<br />
+<br />
+
+<div align="center">
+  <img src="Presentazione/img/11.png" alt="Architettura del Servizio REST." />
+</div>
+Per cominciare, il servizio REST esposto segue un’architettura formata da 3 livelli, ognuno che comunica con il precedente e con il successivo. Questi sono:
+<ol>
+  <li>il livello di business: che si occupa della gestione delle richieste HTTP, dell’autenticazione e della traduzione dei dati JSON in oggetti Java. Inoltre, comprende le regole e la logica di business dell’applicazione, inclusa la validazione dei dati, che determinano quali azioni compiere;</li>
+  <li>il livello di persistenza: che gestisce la logica di memorizzazione e traduce gli oggetti di business da e verso il database;</li>
+  <li>il livello di database: che rappresenta la base dati utilizzata per gestire i dati dell’applicazione.</li>
+</ol>
+Come si evince dallo schema, alcuni dei componenti rappresentati (in particolare CONTROLLER e MODEL) sono un chiaro riferimento al design pattern su cui si basa il servizio: il pattern MVC.
